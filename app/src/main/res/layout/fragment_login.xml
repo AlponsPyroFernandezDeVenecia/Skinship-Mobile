@@ -11,9 +11,7 @@
         android:id="@+id/view"
         android:layout_width="366dp"
         android:layout_height="504dp"
-
         android:layout_marginTop="72dp"
-
         android:background="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,15 +32,12 @@
         android:id="@+id/textView4"
         android:layout_width="81dp"
         android:layout_height="38dp"
-
         android:layout_marginStart="38dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="257dp"
-
         android:text="Login"
         android:textColor="@color/white"
         android:textSize="30sp"
-
         app:layout_constraintEnd_toEndOf="@+id/view"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/view"
@@ -53,12 +48,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="37dp"
-
         android:layout_marginTop="12dp"
         android:layout_marginEnd="70dp"
         android:text="Log in your account"
         android:textColor="@color/white"
-
         android:textSize="35px"
         app:layout_constraintEnd_toEndOf="@+id/view"
         app:layout_constraintHorizontal_bias="0.02"
@@ -66,7 +59,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <EditText
-        android:id="@+id/Nickname"
+        android:id="@+id/editTextEmail"
         android:layout_width="292dp"
         android:layout_height="49dp"
         android:layout_marginStart="36dp"
@@ -74,57 +67,50 @@
         android:layout_marginEnd="45dp"
         android:ems="10"
         android:inputType="text"
-
         android:hint="Email"
         android:textColorHint="@color/white"
         android:textColor="@color/white"
         android:textSize="40px"
         android:backgroundTint="@color/white"
-
         app:layout_constraintEnd_toEndOf="@+id/view"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/view"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/editTextPassword"
         android:layout_width="292dp"
         android:layout_height="49dp"
         android:layout_marginStart="36dp"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="43dp"
         android:ems="10"
-
         android:hint="Password"
         android:textColorHint="@color/white"
         android:inputType="textPassword"
         android:textSize="40px"
         android:backgroundTint="@color/white"
-
         app:layout_constraintEnd_toEndOf="@+id/view"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toBottomOf="@+id/Nickname" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
 
 
     <Button
         android:id="@+id/login"
         android:layout_width="292dp"
         android:layout_height="46dp"
-
         android:layout_marginStart="35dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="39dp"
-
         android:backgroundTint="@color/white"
         android:text="Log In"
         android:textColor="@color/black"
         android:textSize="38px"
-
         app:layout_constraintEnd_toEndOf="@+id/view"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toBottomOf="@+id/password" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
 
     <TextView
         android:id="@+id/textView7"
@@ -136,7 +122,6 @@
         android:text="or"
         android:textColor="@color/white"
         android:textSize="35px"
-
         app:layout_constraintEnd_toEndOf="@+id/view"
         app:layout_constraintHorizontal_bias="0.546"
         app:layout_constraintStart_toStartOf="@+id/view"
@@ -146,16 +131,13 @@
         android:id="@+id/signup"
         android:layout_width="221dp"
         android:layout_height="42dp"
-
         android:layout_marginStart="35dp"
         android:layout_marginTop="28dp"
-
         android:layout_marginEnd="39dp"
         android:backgroundTint="@color/white"
         android:text="Sign Up"
         android:textSize="38px"
         android:textColor="@color/black"
-
         app:layout_constraintEnd_toEndOf="@+id/view"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/view"
@@ -165,15 +147,12 @@
         android:id="@+id/back"
         android:layout_width="62dp"
         android:layout_height="43dp"
-
         android:layout_marginTop="28dp"
-
         android:layout_marginEnd="39dp"
         android:backgroundTint="@color/white"
         android:text="{"
         android:textSize="38px"
         android:textColor="@color/black"
-
         app:layout_constraintEnd_toEndOf="@+id/view"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/signup"

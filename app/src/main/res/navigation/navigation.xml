@@ -193,19 +193,8 @@
             android:id="@+id/action_signup1Fragment2_to_loginFragment"
             app:destination="@id/loginFragment" />
         <action
-            android:id="@+id/action_signup1Fragment2_to_signup2Fragment2"
-            app:destination="@id/signup2Fragment2" />
+            android:id="@+id/action_signup1Fragment2_to_homeFragment"
+            app:destination="@id/homeFragment"/>
     </fragment>
-    <fragment
-        android:id="@+id/signup2Fragment2"
-        android:name="com.application.dripjoycoffee.Signup2Fragment"
-        android:label="fragment_signup2"
-        tools:layout="@layout/fragment_signup2" >
-        <action
-            android:id="@+id/action_signup2Fragment2_to_signup1Fragment2"
-            app:destination="@id/signup1Fragment2" />
-        <action
-            android:id="@+id/action_signup2Fragment2_to_loginFragment"
-            app:destination="@id/loginFragment" />
-    </fragment>
+
 </navigation>
