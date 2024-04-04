@@ -23,6 +23,9 @@ class Signup1Fragment : Fragment() {
     ): View? {
         binding = FragmentSignup1Binding.inflate(inflater, container, false)
 
+        binding.back.setOnClickListener {
+            findNavController().navigate(R.id.action_signupFragment_to_diamondFragment)
+        }
         binding.next.setOnClickListener {
             val inputName = binding.Username.text.toString().trim()
             val inputEmail = binding.Email.text.toString().trim()
@@ -35,44 +38,50 @@ class Signup1Fragment : Fragment() {
             }
 
             if (inputName.isEmpty() || inputEmail.isEmpty() || inputPassword.isEmpty()) {
+                Toast.makeText(requireContext(), "napindot", Toast.LENGTH_LONG).show()
                 Toast.makeText(requireContext(), "All fields are required", Toast.LENGTH_LONG).show()
                 return@setOnClickListener
             }
 
-            RetrofitClient.instance.registerUser(inputName, inputEmail, inputPassword, inputConfirmPassword)
-                .enqueue(object : Callback<RegisterResponse> {
-                    override fun onResponse(call: Call<RegisterResponse>, response: Response<RegisterResponse>) {
-                        if (response.isSuccessful) {
-                            val registerResponse = response.body()
-                            if (registerResponse != null) {
-                                if (registerResponse.success) {
-                                    // Registration successful, navigate to home fragment
-                                    Toast.makeText(requireContext(), registerResponse.message ?: "Registration successful", Toast.LENGTH_LONG).show()
-                                    requireActivity().runOnUiThread {
-                                        findNavController().navigate(R.id.action_signup1Fragment2_to_homeFragment)
-                                    }
-                                } else {
-                                    // Registration failed, display error message
-                                    Toast.makeText(requireContext(), registerResponse.message ?: "Registration failed", Toast.LENGTH_LONG).show()
-                                    Log.e("Registration failed", "Response: $registerResponse")
-                                    Log.e("dddd", "Response: $registerResponse")
-                                }
-                            } else {
-                                // Response body is null
-                                Toast.makeText(requireContext(), "B", Toast.LENGTH_LONG).show()
-                            }
-                        } else {
-                            // HTTP request failed
-                            val errorMessage = response.errorBody()?.string() ?: "C"
-                            Toast.makeText(requireContext(), errorMessage, Toast.LENGTH_LONG).show()
-                        }
-                    }
+            findNavController().navigate(R.id.action_signupFragment_to_loginFragment)
 
-                    override fun onFailure(call: Call<RegisterResponse>, t: Throwable) {
-                        Toast.makeText(requireContext(), "Network Error. Please try again later.", Toast.LENGTH_LONG).show()
-                    }
-                })
+            val request = RegisterRequest(inputName, inputEmail, inputPassword, inputConfirmPassword)
+            registerUser(request)
         }
         return binding.root
+    }
+
+    private fun registerUser(request: RegisterRequest) {
+        RetrofitClient.instance.registerUser(
+            request.name,
+            request.email,
+            request.password,
+            request.confirmpassword
+        ).enqueue(object : Callback<RegisterResponse> {
+            override fun onResponse(call: Call<RegisterResponse>, response: Response<RegisterResponse>) {
+                if (response.isSuccessful) {
+                    val registerResponse = response.body()
+                    if (registerResponse != null) {
+                        if (registerResponse.success) {
+                            // Registration successful, navigate to home fragment
+                            requireActivity().runOnUiThread {
+
+                                Toast.makeText(requireContext(), registerResponse.message ?: "Registration successful", Toast.LENGTH_LONG).show()
+                                Log.e("Registration successful", "Response: $registerResponse")
+                                Log.e("kkkk", "Response: $registerResponse")
+                            }
+                        } else {
+                            // Registration failed, display error message
+                            Toast.makeText(requireContext(), registerResponse.message ?: "Registration failed", Toast.LENGTH_LONG).show()
+                            Log.e("Registration failed", "Response: $registerResponse")
+                            Log.e("gggg", "Response: $registerResponse")
+                        }
+                    }
+                }
+            }
+            override fun onFailure(call: Call<RegisterResponse>, t: Throwable) {
+                Toast.makeText(requireContext(), "Network Error. Please try again later.", Toast.LENGTH_LONG).show()
+            }
+        })
     }
 }

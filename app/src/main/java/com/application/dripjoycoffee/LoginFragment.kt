@@ -64,7 +64,7 @@ class LoginFragment : Fragment() {
 
 
         binding.signup.setOnClickListener {
-            findNavController().navigate(R.id.action_loginFragment_to_signup1Fragment2)
+            findNavController().navigate(R.id.action_loginFragment_to_signup1Fragment)
         }
 
         binding.back.setOnClickListener {

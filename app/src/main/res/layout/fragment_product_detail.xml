@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
-    tools:context=".EspressoFragment">
+    tools:context=".ProductDetailFragment">
 
     <Button
         android:id="@+id/back"
@@ -29,10 +29,10 @@
 
     <ImageView
         android:id="@+id/imageView12"
-        android:layout_width="405dp"
+        android:layout_width="420dp"
         android:layout_height="371dp"
         android:layout_marginTop="16dp"
-        android:src="@drawable/salicylic"
+        android:src="@drawable/eskinol"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,7 +43,7 @@
         android:layout_width="364dp"
         android:layout_height="586dp"
         android:layout_marginTop="256dp"
-        android:background="@color/black"
+        android:background="@color/red"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -53,11 +53,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:text="Skinever"
+        android:text="Eskinol"
         android:textColor="@color/white"
         android:textSize="30dp"
         app:layout_constraintEnd_toEndOf="@+id/view3"
-        app:layout_constraintHorizontal_bias="0.204"
+        app:layout_constraintHorizontal_bias="0.179"
         app:layout_constraintStart_toStartOf="@+id/view3"
         app:layout_constraintTop_toTopOf="@+id/view3" />
 
@@ -65,7 +65,7 @@
         android:id="@+id/description"
         android:layout_width="275dp"
         android:layout_height="47dp"
-        android:text="Salicylic Refreshing Scrub Cleanser can deeply cleansing the skin."
+        android:text="It brightens and reduces the appearance of dark spots with consistent usage, leaving your skin visibly clearer and smoother."
         android:textColor="@color/white"
         android:textSize="11dp"
         app:layout_constraintEnd_toEndOf="@+id/view3"
@@ -172,7 +172,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="76dp"
-        android:text="Cash on Delievery"
+        android:text="Cash on Delivery"
         android:textColor="@color/white"
         android:textSize="11dp"
         app:layout_constraintEnd_toEndOf="@+id/view3"

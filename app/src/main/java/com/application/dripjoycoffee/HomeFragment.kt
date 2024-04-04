@@ -1,53 +1,59 @@
 package com.application.dripjoycoffee
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.application.dripjoycoffee.databinding.FragmentDiamondBinding
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.application.dripjoycoffee.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
 
     private lateinit var binding: FragmentHomeBinding
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var productList: MutableList<ProductDataClass>
+    private lateinit var productService: ProductService
+    private lateinit var productAdapter: ProductAdapter
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentHomeBinding.inflate(inflater,container,false)
-        binding.settings.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_settingsFragment)
+        binding = FragmentHomeBinding.inflate(inflater, container, false)
+        val view = binding.root
+
+        productService = ProductService(requireContext())
+        productList = mutableListOf()
+        productAdapter = ProductAdapter(productList) { product ->
+            findNavController().navigate(R.id.action_homeFragment_to_product_detail)
         }
-        binding.Latte.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_latteFragment)
-        }
-        binding.Americano.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_americanoFragment)
-        }
-        binding.Cappuccino.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_cappuccinoFragment)
-        }
-        binding.Espresso.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_espressoFragment)
-        }
-        binding.Macchiato.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_macchiatoFragment)
-        }
-        binding.Caramel.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_caramelFragment)
-        }
-        binding.Choco.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_chocoFragment)
-        }
+
+        recyclerView = binding.recyclerView
+        recyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
+        recyclerView.adapter = productAdapter
+
+        fetchProducts()
+
         binding.profile.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_profileFragment)
         }
         binding.logout.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_loginFragment)
         }
-        return binding.root
+
+        return view
     }
 
+    private fun fetchProducts() {
+        productService.getProducts { products ->
+            products?.let {
+                productList.clear()
+                productList.addAll(it)
+                productAdapter.notifyDataSetChanged()
+            }
+        }
+    }
 }

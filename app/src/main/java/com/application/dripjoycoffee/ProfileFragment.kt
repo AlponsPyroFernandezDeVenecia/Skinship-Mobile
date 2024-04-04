@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.application.dripjoycoffee.databinding.FragmentHomeBinding
 import com.application.dripjoycoffee.databinding.FragmentProfileBinding
 
 class ProfileFragment : Fragment() {

@@ -140,11 +140,9 @@
 
     <View
         android:id="@+id/option"
-        android:layout_width="366dp"
+        android:layout_width="wrap_content"
         android:layout_height="52dp"
-
         android:background="@color/white"
-
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -154,10 +152,10 @@
         android:id="@+id/home"
         android:layout_width="98dp"
         android:layout_height="52dp"
-        android:backgroundTint="@color/black"
+        android:backgroundTint="@color/green"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/option"
-        app:layout_constraintHorizontal_bias="0.063"
+        app:layout_constraintHorizontal_bias="0.053"
         app:layout_constraintStart_toStartOf="@+id/option"
         app:layout_constraintTop_toTopOf="@+id/option" />
 
@@ -177,6 +175,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Home"
+        android:textStyle="bold"
         android:textColor="@color/white"
         android:textSize="30px"
         android:layout_marginTop="-8dp"
@@ -190,10 +189,10 @@
         android:id="@+id/logout"
         android:layout_width="98dp"
         android:layout_height="52dp"
-        android:backgroundTint="@color/black"
+        android:backgroundTint="@color/green"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/option"
-        app:layout_constraintHorizontal_bias="0.642"
+        app:layout_constraintHorizontal_bias="0.442"
         app:layout_constraintStart_toEndOf="@+id/profile"
         app:layout_constraintTop_toTopOf="@+id/option"
         app:layout_constraintVertical_bias="0.0" />
@@ -228,10 +227,10 @@
         android:layout_width="98dp"
         android:layout_height="52dp"
         android:layout_marginBottom="4dp"
-        android:backgroundTint="@color/black"
+        android:backgroundTint="@color/green"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/option"
-        app:layout_constraintHorizontal_bias="0.176"
+        app:layout_constraintHorizontal_bias="0.120"
         app:layout_constraintStart_toEndOf="@+id/home"
         app:layout_constraintTop_toTopOf="@+id/option"
         app:layout_constraintVertical_bias="0.0" />
@@ -253,7 +252,6 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="5dp"
         android:text="Profile"
-        android:textStyle="bold"
         android:textColor="@color/white"
         android:textSize="30px"
         app:layout_constraintBottom_toBottomOf="@+id/profile"
@@ -261,13 +259,13 @@
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="@+id/profile"
         app:layout_constraintTop_toBottomOf="@+id/profile_img" />
-
     <Button
         android:id="@+id/Edit"
         android:layout_width="119dp"
         android:layout_height="40dp"
         android:layout_marginTop="48dp"
-        android:backgroundTint="@color/black"
+        android:backgroundTint="@color/green"
+        android:textColor="@color/white"
         android:text="Edit Info"
         app:layout_constraintBottom_toTopOf="@+id/option"
         app:layout_constraintEnd_toEndOf="parent"
