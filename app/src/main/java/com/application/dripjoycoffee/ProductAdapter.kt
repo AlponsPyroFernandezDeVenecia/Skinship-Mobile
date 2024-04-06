@@ -27,7 +27,9 @@ class ProductAdapter(
 
         fun bind(item: ProductDataClass) {
             skinNameTextView.text = item.name
-            priceTextView.text = "₱${item.price}"
+            priceTextView.text = "$" +
+                    "" +
+                    "${item.price}"
 
             val imageUrl = "https://srv1322-files.hstgr.io/304d909a8bcd9aa7/files/laravel/storage/tmp/uploads/${item.galleries}"
             Glide.with(itemView.context)
